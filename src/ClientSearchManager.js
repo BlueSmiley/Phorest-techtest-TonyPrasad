@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchForm from './SearchForm';
+import ClientSearchForm from './ClientSearchForm';
 import ClientDataDisplay from './ClientDataDisplay';
 
 
@@ -64,8 +64,8 @@ class ClientSearchManager extends React.Component {
         });
         return (
             <div>
-                <SearchForm
-                    onSearch={this.handleSearch}
+                <ClientSearchForm
+                    handleSearch={this.handleSearch}
                 />
                 {clientData}
             </div>
