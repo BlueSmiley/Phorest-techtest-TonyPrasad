@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import NameForm from './App';
+import ClientSearchManager from './ClientSearchManager';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NameForm />
+    <ClientSearchManager />
   </React.StrictMode>,
   document.getElementById('root')
 );
