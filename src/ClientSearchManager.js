@@ -13,14 +13,14 @@ class ClientSearchManager extends React.Component {
         this.handleSearch = this.handleSearch.bind(this);
     }
 
-    handleSearch(event, searchType, searchValue) {
+    handleSearch(event, searchType, searchValue, userName, password) {
         event.preventDefault();
         alert('A ' + searchType + ' query was submitted: ' + searchValue);
         let url = 'http://api-gateway-dev.phorest.com/third-party-api-server/api/business/eTC3QY5W3p_HmGHezKfxJw/client';
         let query = '?' + searchType + '=' + searchValue;
         fetch(url + query, {
             headers: {
-                'Authorization': 'Basic ' + btoa('global/cloud@apiexamples.com:VMlRo/eh+Xd8M~l'),
+                'Authorization': 'Basic ' + btoa(userName + ':' + password),
             }
         })
             .then((res) => {

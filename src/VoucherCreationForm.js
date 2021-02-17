@@ -5,6 +5,8 @@ class VoucherCreationForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            userName: '',
+            password: '',
             businessId: '',
             clientId: '',
             creatingBranchId: '',
@@ -27,6 +29,8 @@ class VoucherCreationForm extends React.Component {
                         (event) => {
                             this.props.handleSubmit(
                                 event,
+                                this.state.userName,
+                                this.state.password,
                                 this.state.businessId,
                                 this.state.clientId,
                                 this.state.creatingBranchId,
@@ -37,51 +41,72 @@ class VoucherCreationForm extends React.Component {
                         }
                     }
                 >
-                    <label>
-                        Create a voucher:
-                        <br />
+                    Create a voucher:
+                    <br />
+                    <label>Username:
+                        <input
+                            type="text"
+                            name="userName"
+                            value={this.state.userName}
+                            onChange={this.handleChange}
+                        />
+                    </label>
 
-                        <span>Business Id:</span>
+                    <label>Password:
+                        <input
+                            type="text"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+
+                    <label>Business Id:
                         <input
                             type="text"
                             name="businessId"
                             value={this.state.businessId}
                             onChange={this.handleChange}
                         />
+                    </label>
 
-                        <span>Client Id:</span>
+                    <label>Client Id:
                         <input
                             type="text"
                             name="clientId"
                             value={this.state.clientId}
                             onChange={this.handleChange}
                         />
+                    </label>
 
-                        <span>Creating Branch Id:</span>
+                    <label>Creating Branch Id:
                         <input
                             type="text"
                             name="creatingBranchId"
                             value={this.state.creatingBranchId}
                             onChange={this.handleChange}
                         />
+                    </label>
 
-                        <span>Expiry Date:</span>
+                    <label>Expiry Date:
                         <input
                             type="text"
                             name="expiryDate"
                             value={this.state.expiryDate}
                             onChange={this.handleChange}
                         />
+                    </label>
 
-                        <span>Issue Date:</span>
+                    <label>Issue Date:
                         <input
                             type="text"
                             name="issueDate"
                             value={this.state.issueDate}
                             onChange={this.handleChange}
                         />
+                    </label>
 
-                        <span>Original balance:</span>
+                    <label>Original balance:
                         <input
                             type="text"
                             name="originalBalance"
@@ -89,6 +114,7 @@ class VoucherCreationForm extends React.Component {
                             onChange={this.handleChange}
                         />
                     </label>
+
                     <br />
                     <input type="submit" value="Create Voucher" />
                 </form>
