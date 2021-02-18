@@ -1,12 +1,13 @@
+import './ClientDataDisplay.css';
 
 function ClientDataDisplay(props) {
     return (
-        <div>
-            <p>First name: {props.firstName}</p>
-            <p>Last Name: {props.lastName}</p>
-            <p>Client Id: {props.clientId}</p>
-            <p>Phone Number: {props.phone}</p>
-            <p>Email: {props.email}</p>
+        <div className='card'>
+            <p><span className='heading'>First name:</span> {props.firstName}</p>
+            <p><span className='heading'>Last Name:</span> {props.lastName}</p>
+            <p><span className='heading'>Client Id:</span> {props.clientId}</p>
+            <p><span className='heading'>Phone Number:</span> {props.phone}</p>
+            <p><span className='heading'>Email:</span> {props.email}</p>
         </div>
     );
 }

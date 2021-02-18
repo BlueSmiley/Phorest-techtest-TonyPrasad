@@ -1,0 +1,12 @@
+.card {
+    box-shadow: 0.2em 0.4em 0.1em teal;
+    border-style: solid;
+    border-width: 0.1em;
+    padding: 0.2em;
+    margin: 0.5em;
+    display: inline-block;
+}
+
+.heading {
+    font-weight: bold;
+}
