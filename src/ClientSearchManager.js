@@ -8,19 +8,22 @@ class ClientSearchManager extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentSearchResults: []
+            currentSearchResults: [],
+            searchFeedback: ''
         };
         this.handleSearch = this.handleSearch.bind(this);
     }
 
-    handleSearch(event, searchType, searchValue, userName, password) {
+    handleSearch(event, searchType, searchValue, userName, password, businessId) {
         event.preventDefault();
         let contactTypeString = 'an email';
         if(searchType === 'phone'){
             contactTypeString = 'a phone number'
         }
-        alert('A query has been made for an user with ' + contactTypeString + ' of ' + searchValue);
-        let url = 'http://api-gateway-dev.phorest.com/third-party-api-server/api/business/eTC3QY5W3p_HmGHezKfxJw/client';
+        // While query loading also sensible default
+        this.setState({searchFeedback : 'A query has been made for an user with ' + contactTypeString + ' of ' + searchValue});
+
+        let url = 'http://api-gateway-dev.phorest.com/third-party-api-server/api/business/' + businessId + '/client';
         let query = '?' + searchType + '=' + searchValue;
         fetch(url + query, {
             headers: {
@@ -37,21 +40,24 @@ class ClientSearchManager extends React.Component {
             .then((data) => {
                 if (data.page.totalElements > 0) {
                     let clients = data['_embedded']['clients']
-                    this.setState({currentSearchResults: clients});
-                    for (let i = 0; i < clients.length; i++) {
-                        let client = clients[i];
-                        // Self note: this is only for debugging, remove after
-                        console.log(client.firstName);
-                    }
+                    this.setState({
+                        currentSearchResults: clients,
+                        searchFeedback: 'Found ' + clients.length + ' results for user with ' + contactTypeString + 
+                        ' of ' + searchValue
+                    });
+                    
                 }
                 else {
                     // Reset when no data found
-                    this.setState({currentSearchResults: []});
-                    console.log("No data found for those contact details");
+                    this.setState({
+                        currentSearchResults: [],
+                        searchFeedback : 'No data found for user with ' + contactTypeString + ' of ' + searchValue
+                    });
+
                 }
             })
             .catch((error) => {
-                console.log('error:' + error);
+                this.setState({searchFeedback : 'An error has occured:' + error});
             })
     }
 
@@ -73,6 +79,8 @@ class ClientSearchManager extends React.Component {
                 <ClientSearchForm
                     handleSearch={this.handleSearch}
                 />
+                <br/>
+                <p>{this.state.searchFeedback}</p>
                 <br/>
                 {clientData}
             </div>

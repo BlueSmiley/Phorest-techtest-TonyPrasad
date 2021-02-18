@@ -1,5 +1,6 @@
 import React from 'react';
 import './ClientSearchForm.css';
+import SearchField from './SearchField';
 
 
 class ClientSearchForm extends React.Component {
@@ -9,7 +10,8 @@ class ClientSearchForm extends React.Component {
             filterValue: '',
             searchType: 'email',
             userName: '',
-            password: ''
+            password: '',
+            businessId: ''
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSearchTypeChange = this.handleSearchTypeChange.bind(this);
@@ -32,45 +34,53 @@ class ClientSearchForm extends React.Component {
                         this.state.searchType,
                         this.state.filterValue,
                         this.state.userName,
-                        this.state.password
+                        this.state.password,
+                        this.state.businessId
                     );
                 }}>
                     <div className='searchFieldWrapper'>
-                        Search by email or phone number:
-                        <br/>
+                        Search for users by email or phone number:
+                        <br />
                         <select value={this.state.searchType} onChange={this.handleSearchTypeChange}>
                             <option value="email">Email</option>
                             <option value="phone">Phone</option>
                         </select>
                         <input type="text" name="filterValue" value={this.state.filterValue} onChange={this.handleChange} />
                     </div>
-                    <br/>
+                    <br />
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>
-                            Username:
-                        <input
-                                className='searchFieldInput'
-                                type="text"
-                                name="userName"
-                                value={this.state.userName}
-                                onChange={this.handleChange} />
-                        </label>
+                        <SearchField
+                            header="Username"
+                            type="text"
+                            name="userName"
+                            value={this.state.userName}
+                            onChange={this.handleChange}
+                        />
                     </div>
-                    <br/>
+                    <br />
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>
-                            Password:
-                        <input
-                                className='searchFieldInput'
-                                type="password"
-                                name="password"
-                                value={this.state.password}
-                                onChange={this.handleChange} />
-                        </label>
+                        <SearchField
+                            header="Password"
+                            type="password"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                        />
                     </div>
-                    <br/>
+                    <br />
+
+                    <div className='searchFieldWrapper'>
+                        <SearchField
+                            header="Business ID"
+                            type="text"
+                            name="businessId"
+                            value={this.state.businessId}
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <br />
 
                     <div className='searchFieldWrapper'>
                         <input type="submit" value="Search" />
