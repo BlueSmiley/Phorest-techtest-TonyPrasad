@@ -1,6 +1,6 @@
 import React from 'react';
 import './VoucherCreationForm.css';
-
+import SearchField from './SearchField';
 
 class VoucherCreationForm extends React.Component {
     constructor(props) {
@@ -42,102 +42,87 @@ class VoucherCreationForm extends React.Component {
                         }
                     }
                 >
-                    Create a voucher:
+                    <h1>Create a voucher for a user:</h1>
                     <br />
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>Username:
-                        <input
-                                className='searchFieldInput'
-                                type="text"
-                                name="userName"
-                                value={this.state.userName}
-                                onChange={this.handleChange}
-                            />
-                        </label>
+                        <SearchField
+                            header="Username"
+                            type="text"
+                            name="userName"
+                            value={this.state.userName}
+                            onChange={this.handleChange}
+                        />
                     </div>
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>Password:
-                        <input
-                                className='searchFieldInput'
-                                type="password"
-                                name="password"
-                                value={this.state.password}
-                                onChange={this.handleChange}
-                            />
-                        </label>
+                        <SearchField
+                            header="Password"
+                            type="password"
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                        />
                     </div>
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>Business Id:
-                        <input
-                                className='searchFieldInput'
-                                type="text"
-                                name="businessId"
-                                value={this.state.businessId}
-                                onChange={this.handleChange}
-                            />
-                        </label>
+                        <SearchField
+                            header="Business Id"
+                            type="text"
+                            name="businessId"
+                            value={this.state.businessId}
+                            onChange={this.handleChange}
+                        />
                     </div>
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>Client Id:
-                        <input
-                                className='searchFieldInput'
-                                type="text"
-                                name="clientId"
-                                value={this.state.clientId}
-                                onChange={this.handleChange}
-                            />
-                        </label>
+                        <SearchField
+                            header="Client Id"
+                            type="text"
+                            name="clientId"
+                            value={this.state.clientId}
+                            onChange={this.handleChange}
+                        />
                     </div>
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>Creating Branch Id:
-                        <input
-                                className='searchFieldInput'
-                                type="text"
-                                name="creatingBranchId"
-                                value={this.state.creatingBranchId}
-                                onChange={this.handleChange}
-                            />
-                        </label>
+                        <SearchField
+                            header="Branch Id"
+                            type="text"
+                            name="creatingBranchId"
+                            value={this.state.creatingBranchId}
+                            onChange={this.handleChange}
+                        />
                     </div>
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>Expiry Date:
-                        <input
-                                className='searchFieldInput'
-                                type="text"
-                                name="expiryDate"
-                                value={this.state.expiryDate}
-                                onChange={this.handleChange}
-                            />
-                        </label>
+                        <SearchField
+                            header="Expiry Date"
+                            type="text"
+                            name="expiryDate"
+                            value={this.state.expiryDate}
+                            onChange={this.handleChange}
+                        />
                     </div>
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>Issue Date:
-                        <input
-                                className='searchFieldInput'
-                                type="text"
-                                name="issueDate"
-                                value={this.state.issueDate}
-                                onChange={this.handleChange}
-                            />
-                        </label>
+                        <SearchField
+                            header="Issue Date"
+                            type="text"
+                            name="issueDate"
+                            value={this.state.issueDate}
+                            onChange={this.handleChange}
+                        />
+
                     </div>
 
                     <div className='searchFieldWrapper'>
-                        <label className='searchFieldLabel'>Voucher Balance:
-                        <input
-                                className='searchFieldInput'
-                                type="text"
-                                name="originalBalance"
-                                value={this.state.originalBalance}
-                                onChange={this.handleChange}
-                            />
-                        </label>
+                        <SearchField
+                            header="Voucher Balance"
+                            type="text"
+                            name="originalBalance"
+                            value={this.state.originalBalance}
+                            onChange={this.handleChange}
+                        />
                     </div>
 
                     <br />

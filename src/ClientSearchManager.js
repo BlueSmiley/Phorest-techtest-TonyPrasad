@@ -9,7 +9,7 @@ class ClientSearchManager extends React.Component {
         super(props);
         this.state = {
             currentSearchResults: [],
-            searchFeedback: ''
+            userFeedback: ''
         };
         this.handleSearch = this.handleSearch.bind(this);
     }
@@ -21,7 +21,7 @@ class ClientSearchManager extends React.Component {
             contactTypeString = 'a phone number'
         }
         // While query loading also sensible default
-        this.setState({searchFeedback : 'A query has been made for an user with ' + contactTypeString + ' of ' + searchValue});
+        this.setState({userFeedback : 'A query has been made for an user with ' + contactTypeString + ' of ' + searchValue});
 
         let url = 'http://api-gateway-dev.phorest.com/third-party-api-server/api/business/' + businessId + '/client';
         let query = '?' + searchType + '=' + searchValue;
@@ -42,7 +42,7 @@ class ClientSearchManager extends React.Component {
                     let clients = data['_embedded']['clients']
                     this.setState({
                         currentSearchResults: clients,
-                        searchFeedback: 'Found ' + clients.length + ' results for user with ' + contactTypeString + 
+                        userFeedback: 'Found ' + clients.length + ' results for user with ' + contactTypeString + 
                         ' of ' + searchValue
                     });
                     
@@ -51,13 +51,13 @@ class ClientSearchManager extends React.Component {
                     // Reset when no data found
                     this.setState({
                         currentSearchResults: [],
-                        searchFeedback : 'No data found for user with ' + contactTypeString + ' of ' + searchValue
+                        userFeedback : 'No data found for user with ' + contactTypeString + ' of ' + searchValue
                     });
 
                 }
             })
             .catch((error) => {
-                this.setState({searchFeedback : 'An error has occured:' + error});
+                this.setState({userFeedback : 'An error has occured:' + error});
             })
     }
 
@@ -80,7 +80,7 @@ class ClientSearchManager extends React.Component {
                     handleSearch={this.handleSearch}
                 />
                 <br/>
-                <p>{this.state.searchFeedback}</p>
+                <p>{this.state.userFeedback}</p>
                 <br/>
                 {clientData}
             </div>

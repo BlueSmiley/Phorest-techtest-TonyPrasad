@@ -5,6 +5,9 @@ class VoucherCreationManager extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            userFeedback: ''
+        }
         this.handleCreateVoucher = this.handleCreateVoucher.bind(this);
     }
 
@@ -26,6 +29,8 @@ class VoucherCreationManager extends React.Component {
                 originalBalance: originalBalance
             })
         };
+        this.setState({userFeedback: 'Trying to create voucher for the value of ' + originalBalance + ' for user ' +
+            clientId})
         fetch(url, requestBody)
             .then((res) => {
                 // better status checking later maybe
@@ -35,23 +40,24 @@ class VoucherCreationManager extends React.Component {
                 return res.json();
             })
             .then((data) => {
-                alert('A voucher was succesfully created for user ' + data.clientId + ' for a value of ' + 
-                    data.originalBalance + ' valid until ' + data.expiryDate + 
-                    '. The total balance for this user is ' + data.remainingBalance);
-                console.log(data);
+                this.setState({userFeedback: 'A voucher was succesfully created for user ' + data.clientId + 
+                ' for a value of ' + data.originalBalance + ' valid until ' + data.expiryDate + 
+                '. The total balance for this user is ' + data.remainingBalance})
             })
             .catch((error) => {
-                console.log('error:' + error);
+                this.setState({userFeedback : 'An error has occured:' + error});
             })
-        console.log("Business Id:" + businessId + " Client Id:" + clientId + " Branch Id:" + creatingBranchId +
-            " Expiry date:" + expiryDate + " Issue Date:" + issueDate + " Original Balance:" + originalBalance)
     }
 
     render() {
         return (
-            <VoucherCreationForm
-                handleSubmit={this.handleCreateVoucher}
-            />
+            <div>
+                <VoucherCreationForm
+                    handleSubmit={this.handleCreateVoucher}
+                />
+                <br />
+                <p>{this.state.userFeedback}</p>
+            </div>
         );
     }
 }

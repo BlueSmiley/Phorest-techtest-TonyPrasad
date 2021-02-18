@@ -39,7 +39,7 @@ class ClientSearchForm extends React.Component {
                     );
                 }}>
                     <div className='searchFieldWrapper'>
-                        Search for users by email or phone number:
+                        <h1>Search for users by email or phone number:</h1>
                         <br />
                         <select value={this.state.searchType} onChange={this.handleSearchTypeChange}>
                             <option value="email">Email</option>
