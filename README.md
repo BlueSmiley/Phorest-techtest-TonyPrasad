@@ -8,7 +8,8 @@ request to the Phorest API. Since the task was very simple I decided to try do i
 3. Good experience to continue learning React personally
 
 As you might see 2. is an ongoing process, but the base functionality should be working. Hopefully by the point this is
-submitted it should be in a decent state. I am not 100% familiar with React yet so things may take me longer than expected
+submitted it should be in a decent state. I am not 100% familiar with React yet and frontend design so things may 
+take me longer than expected
 
 ## Available Scripts
 
@@ -31,9 +32,8 @@ They are listed in order of priority and how easy to finish and I may have misse
 This serves as a simple TODO for me and also hopefully helps people reviewing my code, my thought process and how I 
 split work.
 
-1. Add spacing between form fields to prevent them being completely cramped
-2. Split display of GET results into own card like widget
-3. Add button to easily add voucher to queried clients 
-4. Simpler date format entry
-5. Validation of fields to reduce invalid values
-6. Button to swap between the POST and GET functionalities
+1. Split display of GET results into own card like widget
+2. Add button to easily add voucher to queried clients 
+3. Simpler date format entry
+4. Validation of fields to reduce invalid values
+5. Button to swap between the POST and GET functionalities
