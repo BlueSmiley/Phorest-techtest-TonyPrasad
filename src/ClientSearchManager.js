@@ -1,6 +1,7 @@
 import React from 'react';
 import ClientSearchForm from './ClientSearchForm';
 import ClientDataDisplay from './ClientDataDisplay';
+import './Main.css';
 
 
 class ClientSearchManager extends React.Component {
@@ -65,7 +66,7 @@ class ClientSearchManager extends React.Component {
         const clientData = this.state.currentSearchResults.map((client) => {
             return (
                 <ClientDataDisplay
-                    key = {"Key" + client.clientId}
+                    key = {'Key' + client.clientId}
                     firstName={client.firstName}
                     lastName={client.lastName}
                     clientId={client.clientId}
@@ -80,9 +81,9 @@ class ClientSearchManager extends React.Component {
                 <ClientSearchForm
                     handleSearch={this.handleSearch}
                 />
-                <br/>
+                <br className='lineBreak'/>
                 <p>{this.state.userFeedback}</p>
-                <br/>
+                <br className='lineBreak'/>
                 {clientData}
             </div>
         );

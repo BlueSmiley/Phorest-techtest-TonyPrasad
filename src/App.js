@@ -1,7 +1,8 @@
 import ClientSearchManager from './ClientSearchManager';
 import VoucherCreationManager from './VoucherCreationManager';
 import React from 'react';
-import './index.css';
+import './App.css';
+import './Main.css';
 
 class App extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class App extends React.Component {
                 <ClientSearchManager 
                     updateClientId={this.updateClientId}
                 />
-                <br />
+                <br className='lineBreak'/>
                 <VoucherCreationManager 
                     updateClientId={this.updateClientId}
                     clientId={this.state.clientId}

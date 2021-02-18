@@ -1,5 +1,5 @@
 import React from 'react';
-import './VoucherCreationForm.css';
+import './Main.css';
 import SearchField from './SearchField';
 
 class VoucherCreationForm extends React.Component {
@@ -49,12 +49,12 @@ class VoucherCreationForm extends React.Component {
                     }
                 >
                     <h1>Create a voucher for a user:</h1>
-                    <br />
+                    <br className='lineBreak'/>
                     <div className='searchFieldWrapper'>
                         <SearchField
-                            header="Username"
-                            type="text"
-                            name="userName"
+                            header='Username'
+                            type='text'
+                            name='userName'
                             value={this.state.userName}
                             onChange={this.handleChange}
                         />
@@ -62,9 +62,9 @@ class VoucherCreationForm extends React.Component {
 
                     <div className='searchFieldWrapper'>
                         <SearchField
-                            header="Password"
-                            type="password"
-                            name="password"
+                            header='Password'
+                            type='password'
+                            name='password'
                             value={this.state.password}
                             onChange={this.handleChange}
                         />
@@ -72,9 +72,9 @@ class VoucherCreationForm extends React.Component {
 
                     <div className='searchFieldWrapper'>
                         <SearchField
-                            header="Business Id"
-                            type="text"
-                            name="businessId"
+                            header='Business Id'
+                            type='text'
+                            name='businessId'
                             value={this.state.businessId}
                             onChange={this.handleChange}
                         />
@@ -82,9 +82,9 @@ class VoucherCreationForm extends React.Component {
 
                     <div className='searchFieldWrapper'>
                         <SearchField
-                            header="Client Id"
-                            type="text"
-                            name="clientId"
+                            header='Client Id'
+                            type='text'
+                            name='clientId'
                             value={this.props.clientId}
                             onChange={this.handleChange}
                         />
@@ -92,9 +92,9 @@ class VoucherCreationForm extends React.Component {
 
                     <div className='searchFieldWrapper'>
                         <SearchField
-                            header="Branch Id"
-                            type="text"
-                            name="creatingBranchId"
+                            header='Branch Id'
+                            type='text'
+                            name='creatingBranchId'
                             value={this.state.creatingBranchId}
                             onChange={this.handleChange}
                         />
@@ -102,9 +102,9 @@ class VoucherCreationForm extends React.Component {
 
                     <div className='searchFieldWrapper'>
                         <SearchField
-                            header="Expiry Date"
-                            type="text"
-                            name="expiryDate"
+                            header='Expiry Date'
+                            type='text'
+                            name='expiryDate'
                             value={this.state.expiryDate}
                             onChange={this.handleChange}
                         />
@@ -112,9 +112,9 @@ class VoucherCreationForm extends React.Component {
 
                     <div className='searchFieldWrapper'>
                         <SearchField
-                            header="Issue Date"
-                            type="text"
-                            name="issueDate"
+                            header='Issue Date'
+                            type='text'
+                            name='issueDate'
                             value={this.state.issueDate}
                             onChange={this.handleChange}
                         />
@@ -123,17 +123,17 @@ class VoucherCreationForm extends React.Component {
 
                     <div className='searchFieldWrapper'>
                         <SearchField
-                            header="Voucher Balance"
-                            type="text"
-                            name="originalBalance"
+                            header='Voucher Balance'
+                            type='text'
+                            name='originalBalance'
                             value={this.state.originalBalance}
                             onChange={this.handleChange}
                         />
                     </div>
 
-                    <br />
+                    <br className='lineBreak'/>
                     <div className='searchFieldWrapper'>
-                        <input type="submit" value="Create Voucher" />
+                        <input type='submit' value='Create Voucher' className='spaciousWidget'/>
                     </div>
                 </form>
             </div>

@@ -25,15 +25,8 @@ You will also see any lint errors in the console.
 This is what I used locally for testing and how I expect others to run the program. I presume npm run build also works
 but I have not tested it.
 
-## Things I plan to do before submission
+## Potential TODOs
 
-I may not be able to do all of these in time but here are some tasks I hope to do before submission
-They are listed in order of priority and how easy to finish and I may have missed some tasks that might be useful
-This serves as a simple TODO for me and also hopefully helps people reviewing my code, my thought process and how I 
-split work.
-
-1. Split display of GET results into own card like widget
-2. Add button to easily add voucher to queried clients 
-3. Simpler date format entry
-4. Validation of fields to reduce invalid values
-5. Button to swap between the POST and GET functionalities
+* Simpler date format entry
+* Validation of fields to reduce invalid values
+* Button to swap between the POST and GET functionalities

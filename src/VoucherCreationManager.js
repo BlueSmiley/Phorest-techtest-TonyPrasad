@@ -1,5 +1,6 @@
 import React from 'react';
 import VoucherCreationForm from './VoucherCreationForm';
+import './Main.css';
 
 class VoucherCreationManager extends React.Component {
 
@@ -57,7 +58,7 @@ class VoucherCreationManager extends React.Component {
                     updateClientId={this.props.updateClientId}
                     clientId={this.props.clientId}
                 />
-                <br />
+                <br className='lineBreak'/>
                 <p>{this.state.userFeedback}</p>
             </div>
         );

@@ -1,0 +1,18 @@
+.lineBreak {
+    clear:both;
+}
+
+.formWrapper {
+    margin: 0.5em;
+}
+
+.searchFieldWrapper {
+    float: left;
+    margin: 0.5em;
+}
+
+.spaciousWidget {
+    width: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
