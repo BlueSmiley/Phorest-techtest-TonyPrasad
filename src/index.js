@@ -8,6 +8,7 @@ import VoucherCreationManager from './VoucherCreationManager'
 ReactDOM.render(
   <React.StrictMode>
     <ClientSearchManager />
+    <br/>
     <VoucherCreationManager />
   </React.StrictMode>,
   document.getElementById('root')

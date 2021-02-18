@@ -15,7 +15,11 @@ class ClientSearchManager extends React.Component {
 
     handleSearch(event, searchType, searchValue, userName, password) {
         event.preventDefault();
-        alert('A ' + searchType + ' query was submitted: ' + searchValue);
+        let contactTypeString = 'an email';
+        if(searchType === 'phone'){
+            contactTypeString = 'a phone number'
+        }
+        alert('A query has been made for an user with ' + contactTypeString + ' of ' + searchValue);
         let url = 'http://api-gateway-dev.phorest.com/third-party-api-server/api/business/eTC3QY5W3p_HmGHezKfxJw/client';
         let query = '?' + searchType + '=' + searchValue;
         fetch(url + query, {
@@ -41,8 +45,9 @@ class ClientSearchManager extends React.Component {
                     }
                 }
                 else {
-                    console.log("No data found");
-                    console.log(data);
+                    // Reset when no data found
+                    this.setState({currentSearchResults: []});
+                    console.log("No data found for those contact details");
                 }
             })
             .catch((error) => {
@@ -54,6 +59,7 @@ class ClientSearchManager extends React.Component {
         const clientData = this.state.currentSearchResults.map((client) => {
             return (
                 <ClientDataDisplay
+                    key = {"Key" + client.clientId}
                     firstName={client.firstName}
                     lastName={client.lastName}
                     clientId={client.clientId}
@@ -67,6 +73,7 @@ class ClientSearchManager extends React.Component {
                 <ClientSearchForm
                     handleSearch={this.handleSearch}
                 />
+                <br/>
                 {clientData}
             </div>
         );

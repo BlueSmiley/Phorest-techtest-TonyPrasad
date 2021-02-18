@@ -1,4 +1,5 @@
 import React from 'react';
+import './ClientSearchForm.css';
 
 
 class ClientSearchForm extends React.Component {
@@ -24,7 +25,7 @@ class ClientSearchForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='formWrapper'>
                 <form onSubmit={(event) => {
                     this.props.handleSearch(
                         event,
@@ -34,26 +35,46 @@ class ClientSearchForm extends React.Component {
                         this.state.password
                     );
                 }}>
-                    <label>
+                    <div className='searchFieldWrapper'>
                         Search by email or phone number:
-                        <br />
+                        <br/>
                         <select value={this.state.searchType} onChange={this.handleSearchTypeChange}>
                             <option value="email">Email</option>
                             <option value="phone">Phone</option>
                         </select>
                         <input type="text" name="filterValue" value={this.state.filterValue} onChange={this.handleChange} />
-                    </label>
+                    </div>
+                    <br/>
 
-                    <label>
-                        Username:
-                        <input type="text" name="userName" value={this.state.userName} onChange={this.handleChange} />
-                    </label>
-                    <label>
-                        Password:
-                        <input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
-                    </label>
-                    <br />
-                    <input type="submit" value="Search" />
+                    <div className='searchFieldWrapper'>
+                        <label className='searchFieldLabel'>
+                            Username:
+                        <input
+                                className='searchFieldInput'
+                                type="text"
+                                name="userName"
+                                value={this.state.userName}
+                                onChange={this.handleChange} />
+                        </label>
+                    </div>
+                    <br/>
+
+                    <div className='searchFieldWrapper'>
+                        <label className='searchFieldLabel'>
+                            Password:
+                        <input
+                                className='searchFieldInput'
+                                type="password"
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleChange} />
+                        </label>
+                    </div>
+                    <br/>
+
+                    <div className='searchFieldWrapper'>
+                        <input type="submit" value="Search" />
+                    </div>
                 </form>
             </div>
         );
