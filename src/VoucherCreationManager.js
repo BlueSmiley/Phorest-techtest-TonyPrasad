@@ -54,6 +54,8 @@ class VoucherCreationManager extends React.Component {
             <div>
                 <VoucherCreationForm
                     handleSubmit={this.handleCreateVoucher}
+                    updateClientId={this.props.updateClientId}
+                    clientId={this.props.clientId}
                 />
                 <br />
                 <p>{this.state.userFeedback}</p>

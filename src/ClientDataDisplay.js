@@ -8,6 +8,7 @@ function ClientDataDisplay(props) {
             <p><span className='heading'>Client Id:</span> {props.clientId}</p>
             <p><span className='heading'>Phone Number:</span> {props.phone}</p>
             <p><span className='heading'>Email:</span> {props.email}</p>
+            <button onClick={(e) => props.onCreateVoucher(props.clientId)}> Create Voucher for this client</button>
         </div>
     );
 }

@@ -71,6 +71,7 @@ class ClientSearchManager extends React.Component {
                     clientId={client.clientId}
                     phone={client.mobile}
                     email={client.email}
+                    onCreateVoucher={this.props.updateClientId}
                 />
             );
         });

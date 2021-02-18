@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import ClientSearchManager from './ClientSearchManager';
-import VoucherCreationManager from './VoucherCreationManager'
+import App from './App'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ClientSearchManager />
-    <br/>
-    <VoucherCreationManager />
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );

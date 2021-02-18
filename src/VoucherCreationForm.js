@@ -9,7 +9,6 @@ class VoucherCreationForm extends React.Component {
             userName: '',
             password: '',
             businessId: '',
-            clientId: '',
             creatingBranchId: '',
             expiryDate: '',
             issueDate: '',
@@ -19,7 +18,14 @@ class VoucherCreationForm extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value });
+        if (event.target.name === 'clientId')
+        {
+            this.props.updateClientId(event.target.value);
+        }
+        else
+        {
+            this.setState({ [event.target.name]: event.target.value });
+        }
     }
 
     render() {
@@ -33,7 +39,7 @@ class VoucherCreationForm extends React.Component {
                                 this.state.userName,
                                 this.state.password,
                                 this.state.businessId,
-                                this.state.clientId,
+                                this.props.clientId,
                                 this.state.creatingBranchId,
                                 this.state.expiryDate,
                                 this.state.issueDate,
@@ -79,7 +85,7 @@ class VoucherCreationForm extends React.Component {
                             header="Client Id"
                             type="text"
                             name="clientId"
-                            value={this.state.clientId}
+                            value={this.props.clientId}
                             onChange={this.handleChange}
                         />
                     </div>
